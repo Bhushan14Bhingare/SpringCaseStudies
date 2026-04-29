@@ -8,6 +8,8 @@ public class DataJpa01TravelBookingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DataJpa01TravelBookingApplication.class, args);
+	
+	System.out.println("hello Repo");
 	}
 
 }
