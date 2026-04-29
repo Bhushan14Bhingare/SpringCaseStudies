@@ -1,0 +1,13 @@
+package com.bhushan.season_finder;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SeasonFinderApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

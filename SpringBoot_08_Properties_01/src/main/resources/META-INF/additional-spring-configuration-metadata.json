@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "emp.bonus",
+    "type": "java.lang.String",
+    "description": "A description for 'emp.bonus'"
+  },
+  {
+    "name": "emp.sal",
+    "type": "java.lang.String",
+    "description": "A description for 'emp.sal'"
+  },
+  {
+    "name": "emp.name",
+    "type": "java.lang.String",
+    "description": "A description for 'emp.name'"
+  }
+]}

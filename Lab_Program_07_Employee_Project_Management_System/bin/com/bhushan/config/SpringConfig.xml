@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    
+    <context:annotation-config/>
+          <context:component-scan base-package="com.bhushan.employee"/>
+         
+         
+          <!-- Constructor Injection for Project Class -->
+         <bean id = "project1" class = "com.bhushan.employee.Project">
+         <constructor-arg name = "projectId" value = "Proj-01"/>
+         <constructor-arg name = "projectName" value = "Web Application"/>
+         <constructor-arg name = "duration" value = "6 months"/>
+         </bean>
+         
+         <bean id = "project2" class = "com.bhushan.employee.Project">
+         <constructor-arg name = "projectId" value = "Proj-02"/>
+         <constructor-arg name = "projectName" value = "Recruitment System"/>
+         <constructor-arg name = "duration" value = "3 months"/>
+         </bean>
+         
+         <!-- Constructor Injection for Employee Class -->
+         <bean id = "employee1" class = "com.bhushan.employee.Employee">
+         <constructor-arg name ="employeeId" value = "Emp-101"/>
+         <constructor-arg name ="employeeName" value = "Alice"/>
+         <property name="project" ref = "project1"></property>
+         </bean>
+         
+         <bean id = "employee2" class = "com.bhushan.employee.Employee">
+         <constructor-arg name ="employeeId" value = "Emp-102"/>
+         <constructor-arg name ="employeeName" value = "Bob"/>
+         <property name="project" ref = "project2"></property>         
+         </bean>
+         
+         
+         <!-- Constructor Injection for Department Class -->
+         
+         <bean id = "IT_department" class = "com.bhushan.employee.Department">
+         <constructor-arg name = "department" value = "IT"/>
+         <constructor-arg>
+           <list>
+            
+            <ref bean ="employee1"/>
+           
+           </list>
+         </constructor-arg>
+         </bean>
+         
+         <bean id = "Hr_department" class = "com.bhushan.employee.Department">
+         <constructor-arg name = "department" value = "Hr"/>
+         <constructor-arg>
+           <list>
+            
+            <ref bean ="employee2"/>
+           
+           </list>
+         </constructor-arg>
+         </bean>
+         
+         
+         <!-- Constructor Injection for Company Class -->
+         <bean id = "company" class = "com.bhushan.employee.Company">
+         <constructor-arg name = "companyName" value = "TechWave Solutions"/>
+         <constructor-arg>
+         <map>
+          <entry key = "IT" value-ref="IT_department"></entry>
+          <entry key = "HR" value-ref="Hr_department"></entry>
+         
+         </map>         
+         </constructor-arg>
+         
+         </bean>
+          </beans>
+          
+          
+          
+          
+          

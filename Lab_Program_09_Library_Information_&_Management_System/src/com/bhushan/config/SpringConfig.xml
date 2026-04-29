@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    
+    <context:annotation-config/>
+          <context:component-scan base-package="com.bhushan.book"/>
+          
+     <bean id = "author1" class = "com.bhushan.book.Author">
+      <constructor-arg  value = "Auth-101"/>
+      <constructor-arg  value = "Martin Fowler"/>
+     </bean>
+     <bean id = "author2" class = "com.bhushan.book.Author">
+      <constructor-arg  value = "Auth-102"/>
+      <constructor-arg  value = "James Gosling"/>
+     </bean>
+     <bean id = "author3" class = "com.bhushan.book.Author">
+      <constructor-arg  value = "Auth-103"/>
+      <constructor-arg  value = "Dennis Ritches"/>
+     </bean>
+          
+     <bean id = "book1" class ="com.bhushan.book.Book">
+     <constructor-arg value = "SB-1001" />
+     <constructor-arg value = "Spring Framework Essentials"/>
+     
+     <property name="author" ref="author1"></property>
+     </bean> 
+     
+     <bean id = "book2" class ="com.bhushan.book.Book">
+     <constructor-arg value = "J-1002" />
+     <constructor-arg value = "JAVA"/>
+     <property name="author" ref="author2"></property>
+     </bean>   
+     <bean id = "book3" class ="com.bhushan.book.Book">
+     <constructor-arg value = "PY-1003" />
+     <constructor-arg value = "PYTHON"/>
+     <property name="author" ref="author3"></property>
+     </bean>       
+     
+     <bean id = "library" class = "com.bhushan.book.Library">
+     <constructor-arg value = "Central Library"/>
+     
+     <constructor-arg name="book">
+     <list>
+     <ref bean="book1"/>
+     <ref bean="book2"/>
+     <ref bean="book3"/>
+     </list>
+     </constructor-arg>
+     </bean>   
+     
+     <bean id = "librarian" class = "com.bhushan.book.Librarian">
+     <property name="employeeName" value="Gautam Gambhir"></property>
+     </bean> 
+</beans>

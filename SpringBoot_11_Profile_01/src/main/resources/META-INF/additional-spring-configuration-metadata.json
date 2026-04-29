@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "payment.id",
+    "type": "java.lang.String",
+    "description": "A description for 'payment.id'"
+  },
+  {
+    "name": "payment.amount",
+    "type": "java.lang.String",
+    "description": "A description for 'payment.amount'"
+  },
+  {
+    "name": "payment.method",
+    "type": "java.lang.String",
+    "description": "A description for 'payment.method'"
+  }
+]}
