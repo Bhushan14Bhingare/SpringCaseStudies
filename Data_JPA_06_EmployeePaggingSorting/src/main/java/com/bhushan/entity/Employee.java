@@ -21,9 +21,9 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name = "EMP_NAME",length = 25)
+	@Column(name = "EMP_NAME",length = 15)
 	private String name;
-	@Column(name = "EMP_Desgination", length = 25)
+	@Column(name = "EMP_Desgination", length = 15)
 	private String desgination;
 	@Column(name = "EMP_Salary",length = 9)
 	private Double salary;
