@@ -113,6 +113,7 @@ public class EmployeeRunner implements CommandLineRunner {
 	                    break;
 
 	                case 10:
+	                	sc.close();
 	                    System.exit(0);
 	            }
 	        }
