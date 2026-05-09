@@ -38,7 +38,8 @@ public class Employee {
 	    name = "emp_seq_gen",
 	    sequenceName = "emp_seq",
 	    allocationSize = 1
-	)	private Integer empId;
+	)	
+	private Integer empId;
 	@NonNull
 	@Column(name = "Emp_Name", length = 15)
 	private String empName;
